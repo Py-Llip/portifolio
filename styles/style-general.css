@@ -20,6 +20,7 @@ header {
     background-color: lightgray;
     align-items: center;
     padding: 0 20px;
+    height: 50px;
 }
 
 #logo {
@@ -27,13 +28,29 @@ header {
     font-weight: normal;
 }
 
-nav > ul {
+nav {
     display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav i {
+    order: 1;
+}
+
+nav > ul {
+    display: none;
     list-style: none;
     justify-content: space-between;
-    align-items: center;
-    width: 50vw;
+    align-content: normal;
     padding: 0;
+    row-gap: 0px;
+    column-gap: 30px;
+    flex-flow: row wrap;
+    flex: 0 0 50vw;
+    padding-top: 0.5%;
+    background-color: aliceblue;
+    
     
 }
 
@@ -42,7 +59,8 @@ nav > ul a {
     text-decoration: none;
 }
 
-nav > ul button#theme {
+nav button#theme {
+    order: 2;
     padding: 6px;
     background-color: black;
     border: none;
@@ -50,6 +68,6 @@ nav > ul button#theme {
     border-radius: 5px;
 }
 
-nav > ul button#theme:active {
+nav button#theme:active {
     box-shadow: inset 0px 0px 5px white;
 }

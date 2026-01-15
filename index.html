@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="styles/style-general.css">
     <script src="https://kit.fontawesome.com/6a521e6aa7.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1 id="logo">Minha logo</h1>
         <nav>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-            <ul>
+            <i class="fa-solid fa-ellipsis-vertical" onclick="clickMenu()"></i>
+            <ul id="items">
                 <li><a href="#">Lar</a></li>
-                <li><a href="#">Página</a></li>
-                <li><a href="#">Página</a></li>
-                <li><button id="theme">Theme</button></li>
+                <li><a href="#">Página1</a></li>
+                <li><a href="#">Página2</a></li>
+                <li><a href="#">Página3</a></li>
+                <li><a href="#">Página4</a></li>
+                <li><a href="#">Página5</a></li>
+                <li><a href="#">Página6</a></li>
+                <li><a href="#">Página7</a></li>
+
             </ul>
+            <button id="theme">Theme</button>
         </nav>
     </header>
     <main>
@@ -26,5 +32,22 @@
     <footer>
 
     </footer>
+    <script>
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                items.style.display = 'flex'
+            } else {
+                items.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (items.style.display == 'flex') {
+                items.style.display = 'none'
+            } else {
+                items.style.display = 'flex'
+            } 
+        }
+    </script>
 </body>
 </html>

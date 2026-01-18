@@ -19,6 +19,7 @@ p {
     line-height: 2em;
     font-weight: bold;
 }
+
 i.fa-solid {
     display: inline;
     padding: 10px;
@@ -26,7 +27,7 @@ i.fa-solid {
 
 #template {
     display: grid;
-    grid-template: 100px calc(100vh - 100px) 100px  / 80px 1fr 80px;
+    grid-template: 100px calc(100vh - 100px) 1fr  / 80px 1fr 80px;
 }
 
 /*Header*/
@@ -54,6 +55,7 @@ nav {
 
 nav i {
     order: 1;
+    cursor: pointer;
 }
 
 nav > ul {
@@ -88,6 +90,7 @@ nav button#theme {
     color: white;
     border-radius: 5px;
     margin-left: 50px;
+    cursor: pointer;
 }
 
 nav button#theme:active {
@@ -137,5 +140,41 @@ main {
 
 footer {
     grid-area: -2 / 2 / -1 / -2;
+    display: grid;
+    place-items: center center;
+    grid-template: 2fr 1fr / 1fr 1fr;
     background-color: red;
+    height: 200px;
+}
+
+footer #columns {
+    grid-column: span 2;
+    justify-self: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+footer #columns div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100px;
+    width: 230px;
+    text-align: center;
+}
+
+footer #columns h1 {
+    font-size: 1.2em;
+
+}
+
+footer #columns a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+footer #social {
+    order: 1;
 }

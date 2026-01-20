@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#template {
+    grid-template-rows: 100px 1fr 200px;
+}
+
+main #about {
+    grid-template: 1fr 1fr / 1fr;
+    
+}
+
+#about .text {
+    text-align: center;
+    min-width: none;
+}
+
+#about > figure {
+    order: -1;
+    width: 80%;
+    justify-self: center;
+}
+
+

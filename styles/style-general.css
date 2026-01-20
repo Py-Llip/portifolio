@@ -34,7 +34,7 @@ i.fa-solid {
 
 #template {
     display: grid;
-    grid-template: 100px calc(100vh - 100px) 1fr  / 80px 1fr 80px;
+    grid-template: 100px 1fr 200px  / 80px 1fr 80px;
 }
 
 /*Header*/
@@ -108,18 +108,19 @@ nav button#theme:active {
 
 main {
     grid-area: 2 / 2 / 3 / 3;
-    
 }
 
 #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100%;
+    place-items: center center;
+    margin: 40px 0px;
+    gap: 20px;
 }
 
 #about .text {
     display: inline-block;
-    min-width: 600px;
+    min-width: 500px;
 }
 
 #about .text h1 {
@@ -134,20 +135,25 @@ main {
 }
 
 #about > figure {
-    background: red url('../images/perfil/terno-semfundo-light.jpg') no-repeat 37% 70% / 800px;
-    height: 400px;
+    /*background: red url('../images/perfil/terno-semfundo-light.jpg') no-repeat 37% 70% / 800px;*/
+    height: calc( 0.8 * (100vh - 100px));
     width: 300px;
-    margin: 8px 20px 0 0;
     justify-self: end;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: black;
+    overflow: hidden;
 }
 
+#about > figure img {
+    width: 250px;
+    transform: translateY(30px);
+    /*object-fit: cover;*/
+}
 /*Footer*/
-
-hr#footer {
-    grid-area: 3 / 1 / 4 / -1;
-}
 
 footer {
     grid-area: -2 / 2 / -1 / -2;
@@ -155,6 +161,11 @@ footer {
     place-items: center center;
     grid-template: 2fr 1fr / 1fr 1fr;
     height: 200px;
+    margin-top: 40px;
+}
+
+hr#footer {
+    grid-area: 3 / 1 / 4 / -1;
 }
 
 footer #columns {
@@ -201,4 +212,31 @@ footer #social a {
 footer #social a:hover {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.2);
+}
+
+@media screen and (max-width: 1000px) {
+    #template {
+    grid-template-columns: 1vw 1fr 1vw;
+    }
+}
+
+@media screen  and (max-width: 540px) {
+
+    footer {
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+        gap: 20px;
+    }
+
+
+    footer #columns {
+        grid-column: 1 / 1;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    footer #social, footer #right {
+        grid-column: 1;
+    }
+    
 }

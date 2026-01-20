@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portifólio</title>
     <link rel="stylesheet" href="styles/style-general.css">
+    <link rel="stylesheet" href="styles/style-870.css" media="screen and (max-width: 870px)">
     <script src="https://kit.fontawesome.com/6a521e6aa7.js" crossorigin="anonymous"></script>
 </head>
-<body onresize="mudouTamanho()">
+<body onresize="mudoutamanho()">
     <div id="template">
         <header>
             <h1 id="logo">Meu Portifólio</h1>
@@ -31,7 +32,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda enim quod minima rerum ut dolores eum nobis, suscipit incidunt quo temporibus, doloremque voluptatibus ab velit vero. Incidunt minima qui reprehenderit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro saepe dolore obcaecati voluptatem sunt iure! Labore impedit repellendus culpa, quae ea natus fugit a, molestias libero necessitatibus error doloribus voluptatum.</p>
                 </div>
                 <figure>
-                    <figcaption>Fellipe Alves</figcaption>
+                    <img src="images/perfil/terno-semfundo-light-corte.jpg" alt="Foto do Fellipe Alves">
                 </figure>
             </section>
         </main>
@@ -66,8 +67,8 @@
         </footer>
     </div>
     <script>
-        function mudouTamanho() {
-            if (window.innerWidth >= 768) {
+        function mudoutamanho() {
+            if (window.innerWidth >= 870) {
                 menu.style.display = 'none'
                 items.style.display = 'flex';
                 items.style.position = 'static';
@@ -78,6 +79,7 @@
                 menu.style.display = 'block';
             }
         }
+        mudoutamanho()
 
         function clickMenu() {
             if (items.style.display == 'flex') {

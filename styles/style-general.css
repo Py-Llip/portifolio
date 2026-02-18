@@ -349,33 +349,76 @@ section {
 
 #projects {
     grid-area: projects;
+
+}
+
+#wraps {
     display: flex;
     flex-flow: column nowrap;
-    gap: 40px;
+    gap: 400px;
 }
 
 #projects article {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 40px;
+    position: relative;
+    background-color: var(--color_maya-blue);
+    padding: 80px;
+}
+
+#projects article::after {
+    content: '';
+    border: 2px solid black;
+    height: 400px;
+    position: absolute;
+    top: 100%;
+}
+
+#projects article:last-child::after {
+    border: none;
 }
 
 #projects .about {
-   border: 2px dotted black;
-   border-radius: 10px;
-   width: 250px;
+   width: 300px;
    height: 200px;
+   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+   background-color: var(--color_blue);
+   padding: 0 80px;
+   text-align: center;
+   display: flex;
+   align-items: center;
 }
 
 #projects img {
     width: 600px;
-    border: 2px dashed black;
     height: 400px;
     object-fit: cover;
     object-position: center;
     aspect-ratio: 1/1;
     
+    
+}
+
+#projects figure {
+    position: relative;
+    border-radius: 40px;
+    border-top-right-radius: 0;
+    overflow: hidden;
+}
+
+#projects figure figcaption {
+    position: absolute;
+    background-color: var(--color_maya-blue);
+    border-radius: 20px 20px 0 0;
+    right: 0;
+    left: 0;
+    height: 100px;
+    top: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 1em;
 }
 
 /*Footer*/

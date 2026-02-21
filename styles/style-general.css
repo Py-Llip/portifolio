@@ -363,8 +363,10 @@ section {
     align-items: center;
     justify-content: space-around;
     position: relative;
-    background-color: var(--color_maya-blue);
+    background-color: var(--color_blue);
     padding: 80px;
+    height: 400px;
+    border-radius: 40px 0;
 }
 
 #projects article::after {
@@ -382,43 +384,61 @@ section {
 #projects .about {
    width: 300px;
    height: 200px;
-   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-   background-color: var(--color_blue);
+   /*clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+   background-color: var(--color_maya-blue);*/
    padding: 0 80px;
    text-align: center;
    display: flex;
    align-items: center;
+   color: var(--color_alice-blue);
 }
 
 #projects img {
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     object-fit: cover;
     object-position: center;
     aspect-ratio: 1/1;
+    /*overflow: hidden;*/
+    border-radius: 40px;
+    border-top-right-radius: 0;
+    /*box-shadow: 10px -10px 0px rgba(0, 0, 0, 1);*/
     
     
+}
+
+#projects img::after {
+    content: '';
+    background-color: red;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -50px;
 }
 
 #projects figure {
     position: relative;
-    border-radius: 40px;
-    border-top-right-radius: 0;
-    overflow: hidden;
+}
+
+#projects figure:hover figcaption {
+    height: 100px;
+    top: calc(100% - 100px);
 }
 
 #projects figure figcaption {
     position: absolute;
-    background-color: var(--color_maya-blue);
-    border-radius: 20px 20px 0 0;
+    background-color: var(--color_blue);
+    border-radius: 40px 40px 0 0;
     right: 0;
     left: 0;
-    height: 100px;
-    top: 80%;
+    height: 50px;
+    top: calc(100% - 50px);
     display: flex;
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 1em;
+    transition: height 0.3s ease, top 0.3s ease;
 }
 
 /*Footer*/
